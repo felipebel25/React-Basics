@@ -4,6 +4,7 @@ import "./App.css";
 import { HookUseState } from "./components/HookUseState";
 import { HookUseEffect } from "./components/HookUseEffect";
 import { HookUseReducer } from "./components/HookUseReducer";
+import { HookUseContext } from "./components/HookUseContext";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       <h1>Vite + React</h1>
       {/* <HookUseState />
       <HookUseEffect /> */}
-      <HookUseReducer />
+      {/* <HookUseReducer /> */}
+      <HookUseContext />
     </>
   );
 }

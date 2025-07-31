@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 /*
  *
  * useEffect is the second most used hook, it works for runs side Effects (fetch API, localStorage, DOM manipulation), it also worked for control the lifecycle of the component
@@ -45,9 +44,12 @@ export const HookUseEffect = () => {
 
       setPokemons(response.results.map((pokemon) => pokemon.name));
     };
+
     fetchPokeData();
+
     return () => setPokemons([]);
   }, []);
+
   return (
     <div>
       {pokemons.map((pokemon) => (
