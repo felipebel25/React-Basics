@@ -5,6 +5,7 @@ import { HookUseState } from "./components/HookUseState";
 import { HookUseEffect } from "./components/HookUseEffect";
 import { HookUseReducer } from "./components/HookUseReducer";
 import { HookUseContext } from "./components/HookUseContext";
+import { HooksUseMemo } from "./components/HooksUseMemo";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <HookUseState />
       <HookUseEffect /> */}
       {/* <HookUseReducer /> */}
-      <HookUseContext />
+      {/* <HookUseContext /> */}
+      <HooksUseMemo />
     </>
   );
 }
