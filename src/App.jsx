@@ -1,3 +1,4 @@
+import React from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -5,8 +6,8 @@ import { HookUseState } from "./components/HookUseState";
 import { HookUseEffect } from "./components/HookUseEffect";
 import { HookUseReducer } from "./components/HookUseReducer";
 import { HookUseContext } from "./components/HookUseContext";
-import { HooksUseMemo } from "./components/HooksUseMemo";
-
+// import { HooksUseMemo } from "./components/HooksUseMemo";
+import { HooksUseCallback } from "./components/HooksUseCallback";
 function App() {
   return (
     <>
@@ -23,7 +24,9 @@ function App() {
       <HookUseEffect /> */}
       {/* <HookUseReducer /> */}
       {/* <HookUseContext /> */}
-      <HooksUseMemo />
+      {/* <HooksUseMemo /> */}
+      <HooksUseCallback />
+    
     </>
   );
 }
