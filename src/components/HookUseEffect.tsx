@@ -19,6 +19,7 @@ export const HookUseEffect = () => {
   useEffect(() => {
     console.log("Mounting!");
     // 👉 “Run this effect only once, after the component is unmounting
+    // clean up function
     return () => {
       console.log("Unmounting!");
     };

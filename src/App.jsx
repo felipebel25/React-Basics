@@ -8,7 +8,15 @@ import { HookUseReducer } from "./components/HookUseReducer";
 import { HookUseContext } from "./components/HookUseContext";
 // import { HooksUseMemo } from "./components/HooksUseMemo";
 import { HooksUseCallback } from "./components/HooksUseCallback";
+import { useFetch } from "./components/hooks/useFetch";
+
 function App() {
+  const [{ result, error, isLoading }, doFetch] = useFetch(
+    "https://rickandmortyapi.com/api/location"
+  );
+
+  console.log({ result, error, isLoading });
+
   return (
     <>
       <div>
@@ -25,8 +33,8 @@ function App() {
       {/* <HookUseReducer /> */}
       {/* <HookUseContext /> */}
       {/* <HooksUseMemo /> */}
-      <HooksUseCallback />
-    
+      {/* <HooksUseCallback /> */}
+      <button onClick={doFetch}> Fetch Again</button>
     </>
   );
 }
