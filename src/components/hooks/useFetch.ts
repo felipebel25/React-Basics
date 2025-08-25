@@ -20,11 +20,7 @@ export const useFetch = (url: string) => {
         const response = await fetch(url);
         const result = await response.json();
 
-        if (!response.ok)
-          return setData({
-            ...data,
-            error: true,
-          });
+        if (!response.ok) throw new Error("Response not ok ");
 
         setData({
           ...data,
