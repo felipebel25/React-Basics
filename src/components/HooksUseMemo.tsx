@@ -13,7 +13,7 @@ export const HooksUseMemo = () => {
     const [search, setSearch] = useState('')
     const [text, setText] = useState('')
 
-    // we avoid unnecessary expensive computes by using useMemo and we should pass a dependency that in this case is search
+    // we avoid unnecessary expensive computes by using useMemo. We should pass a dependency that in this case is search
     const filteredUsers = useMemo(() => {
         return users.filter((user) => user.name.toLowerCase() === search.toLowerCase())
     }, [search])

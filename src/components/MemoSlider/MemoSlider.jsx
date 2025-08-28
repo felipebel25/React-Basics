@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import ImageSlider from "./ImageSlider";
+
 const MemoSlider = () => {
   const [counter, setCounter] = useState(0);
   const slides = [

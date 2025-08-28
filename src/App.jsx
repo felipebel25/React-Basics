@@ -1,20 +1,26 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import MemoSlider from "./components/MemoSlider/MemoSlider";
+import Params from "./components/Params/Params.tsx";
+import Auth from "./components/Auth/Auth.tsx";
 
 function App() {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <Link to="/private">Private</Link>
+      <Routes>
+        <Route path="/" element={<MemoSlider />} />
+        <Route path="/params/:slug" element={<Params />} />
+        <Route
+          path="/private"
+          element={
+            <Auth>
+              <div>Private</div>
+            </Auth>
+          }
+        />
+        <Route path="*" element={<div>404</div>} />
+      </Routes>
       {/* <HookUseState />
       <HookUseEffect /> */}
       {/* <HookUseReducer /> */}
@@ -22,7 +28,6 @@ function App() {
       {/* <HooksUseMemo /> */}
       {/* <HooksUseCallback /> */}
       {/* <button onClick={doFetch}> Fetch Again</button> */}
-      <MemoSlider />
     </>
   );
 }
