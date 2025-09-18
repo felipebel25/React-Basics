@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 const users = [
     {
@@ -6,25 +6,34 @@ const users = [
     },
     {
         id: '2', name: 'Bar'
-    }
+    },
+    // 2000 more users
 ]
 
 export const HooksUseMemo = () => {
-    const [search, setSearch] = useState('')
-    const [text, setText] = useState('')
+    console.log('render')
 
-    // we avoid unnecessary expensive computes by using useMemo. We should pass a dependency that in this case is search
+    // text is just for the input 
+    const [text, setText] = useState('');
+
+    // search state to search users
+    const [search, setSearch] = useState('');
+
+    // bad way 
+    // const filteredUsers = users.filter((user) => user.name.toLowerCase() === search.toLowerCase());
+
+    // we avoid unnecessary expensive computes by using useMemo. We should pass a dependency that in this case is search instead of text that is in the input 
     const filteredUsers = useMemo(() => {
-        return users.filter((user) => user.name.toLowerCase() === search.toLowerCase())
+        console.log('recalculating')
+        return users.filter((user) => user.name.toLowerCase() === search.toLowerCase());
     }, [search])
 
+    // So the filter is always happening when the state search changes
 
     return (
         <div className='app'>
             <input type='text' value={text} onChange={(e) => setText(e.target.value)} />
             <button onClick={() => setSearch(text)}>Search</button>
-            {text}  {search}
-
             <ul>
                 {filteredUsers.map((user) => (
                     <li key={user.id}>{user.name}</li>
