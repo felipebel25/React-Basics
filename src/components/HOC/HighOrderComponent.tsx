@@ -30,7 +30,7 @@ const Repos = ({ isLoading, error, data }: ReposInjectedProps) => {
         <ul>
             {data.map((repo) => (
                 <li key={repo.id}>
-                    <a href={repo.html_url}>{repo.full_name}</a>
+                    <a href={repo.html_url} target="__blank" rel="noopener noreferrer" >{repo.full_name}</a>
                 </li>
             ))}
         </ul>

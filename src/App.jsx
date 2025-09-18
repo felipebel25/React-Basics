@@ -7,6 +7,7 @@ import { Portal } from "./components/Portal";
 import { HooksUseCallback } from "./components/HooksUseCallback";
 import { HooksUseMemo } from "./components/HooksUseMemo";
 import HOCExample from "./components/HOC/HighOrderComponent.tsx";
+import { RegisterForm } from './components/RegisterForm/RegisterForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HooksUseMemo />} />
         <Route path="/callback" element={<HooksUseCallback />} />
         <Route path="/hoc" element={<HOCExample />} />
+        <Route path="/register-form" element={<RegisterForm />} />
 
         <Route path="/portal" element={<Portal />} />
         <Route path="/params/:slug" element={<Params />} />
